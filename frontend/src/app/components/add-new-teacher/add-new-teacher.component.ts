@@ -1,3 +1,5 @@
+// Add new Teacher - Logic
+
 import { Component, OnInit } from '@angular/core';
 import {AppServiceService} from '../../app-service.service';
 import { Router } from '@angular/router';
