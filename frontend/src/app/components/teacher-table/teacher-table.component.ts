@@ -64,6 +64,7 @@ export class TeacherTableComponent implements OnInit {
     let foundItems = [];
     if (value.length <= 0) {
       this.getTeacherData();
+      console.log("Searching All teacher data...");
     } else {
       let b = this.teacherData.filter((teacher) => {
         if (teacher[0].name.toLowerCase().indexOf(value) > -1) {
@@ -71,6 +72,7 @@ export class TeacherTableComponent implements OnInit {
         }
       });
       this.teacherData = foundItems;
+      console.log(`Search Teacher ID ${value}`)
     }
   }
 
