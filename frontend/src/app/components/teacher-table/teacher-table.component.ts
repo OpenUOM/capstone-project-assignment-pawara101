@@ -51,31 +51,6 @@ export class TeacherTableComponent implements OnInit {
     })
   }
 
-  getStudentData() {
-    this.selected = 'Students';
-    this.service.getStudentData().subscribe((response) => {
-      this.teacherData = response;
-    }, (error) => {
-      console.log('ERROR - ', error)
-    })
-  }
-
-  search(value) {
-    let foundItems = [];
-    if (value.length <= 0) {
-      this.getTeacherData();
-      console.log("Searching All teacher data...");
-    } else {
-      let b = this.teacherData.filter((teacher) => {
-        if (teacher[0].name.toLowerCase().indexOf(value) > -1) {
-          foundItems.push(teacher)
-        }
-      });
-      this.teacherData = foundItems;
-      console.log(`Search Teacher ID ${value}`)
-    }
-  }
-
   deleteTeacher(itemid) {
     const test = {
       id: itemid
@@ -83,5 +58,19 @@ export class TeacherTableComponent implements OnInit {
     this.service.deleteTeacher(test).subscribe((response) => {
       this.getTeacherData()
     })
+  }
+
+  search(value) {
+    let foundItems = [];
+    if (value.length <= 0) {
+      this.getTeacherData();
+    } else {
+      let b = this.teacherData.filter((teacher) => {
+        if (teacher[0].name.toLowerCase().indexOf(value) > -1) {
+          foundItems.push(teacher)
+        }
+      });
+      this.teacherData = foundItems;
+    }
   }
 }
