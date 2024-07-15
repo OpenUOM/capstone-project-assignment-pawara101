@@ -9,7 +9,7 @@ export class AppServiceService {
 
   readonly ROOT_URL;
 
-  constructor(private http: HttpClient) {
+constructor(private http: HttpClient) {
     this.ROOT_URL = 'http://localhost:8080'
 }
 
@@ -17,43 +17,43 @@ export class AppServiceService {
     return this.http.get(`/${this.ROOT_URL}/dbinitialize`)
   }
 
-  getTeacherData() {
-    return this.http.get('/api/listTeachers')
-}
+  getTeacherData(){
+    return this.http.get(`/${this.ROOT_URL}/api/listTeachers`)
+  }
 
   getStudentData(){
-    return this.http.get(`/${this.ROOT_URL}/listStudents`)
+    return this.http.get(`/${this.ROOT_URL}/api/listStudents`)
   }
 
   getOneStudentData(payload: Object){
-    return this.http.post(`/${this.ROOT_URL}/getStudentInfo`, payload)
+    return this.http.post(`/${this.ROOT_URL}/api/getStudentInfo`, payload)
   }
 
   getOneTeacherData(payload: Object){
-    return this.http.post(`/${this.ROOT_URL}/getTeacherInfo`, payload)
+    return this.http.post(`/${this.ROOT_URL}/api/getTeacherInfo`, payload)
   }
 
   addTeacher(payload: Object){
-    return this.http.post(`/${this.ROOT_URL}/addTeacher`, payload)
+    return this.http.post(`/${this.ROOT_URL}/api/addTeacher`, payload)
   }
 
   deleteTeacher(payload: Object){
-    return this.http.post(`/${this.ROOT_URL}/deleteTeacher`, payload)
+    return this.http.post(`/${this.ROOT_URL}/api/deleteTeacher`, payload)
   }
 
   editTeacher(payload: Object){
-    return this.http.post(`/${this.ROOT_URL}/editTeacher`, payload)
+    return this.http.post(`/${this.ROOT_URL}/api/editTeacher`, payload)
   }
 
   editStudent(payload: Object){
-    return this.http.post(`/${this.ROOT_URL}/editStudent`, payload)
+    return this.http.post(`/${this.ROOT_URL}/api/editStudent`, payload)
   }
 
   addStudent(payload: Object){
-    return this.http.post(`/${this.ROOT_URL}/addStudent`, payload)
+    return this.http.post(`/${this.ROOT_URL}/api/addStudent`, payload)
   }
 
   deleteStudent(payload: Object){
-    return this.http.post(`/${this.ROOT_URL}/deleteStudent`, payload)
+    return this.http.post(`/${this.ROOT_URL}/api/deleteStudent`, payload)
   }
 }
