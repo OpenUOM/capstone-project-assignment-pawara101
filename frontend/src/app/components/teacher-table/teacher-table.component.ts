@@ -51,12 +51,12 @@ export class TeacherTableComponent implements OnInit {
     })
   }
 
-  deleteTeacher(itemid) {
-    const test = {
-      id: itemid
-    }
-    this.service.deleteTeacher(test).subscribe((response) => {
-      this.getTeacherData()
+  getStudentData() {
+    this.selected = 'Students';
+    this.service.getStudentData().subscribe((response) => {
+      this.teacherData = response;
+    }, (error) => {
+      console.log('ERROR - ', error)
     })
   }
 
@@ -72,5 +72,14 @@ export class TeacherTableComponent implements OnInit {
       });
       this.teacherData = foundItems;
     }
+  }
+
+  deleteTeacher(itemid) {
+    const test = {
+      id: itemid
+    }
+    this.service.deleteTeacher(test).subscribe((response) => {
+      this.getTeacherData()
+    })
   }
 }
