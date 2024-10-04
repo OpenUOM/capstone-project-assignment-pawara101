@@ -14,9 +14,9 @@ jobs:
 
     - uses: actions/setup-node@v3
       with:
-        node-version: 16
+        node-version: 20
     - uses: actions/checkout@v4
-    - uses: education/autograding@v1
+    
     - name: Checkout code
       uses: actions/checkout@v4
     - name: Backend List Teachers
