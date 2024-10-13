@@ -11,11 +11,11 @@ const {
   readTeacherInfo,
   updateStudent,
   updateTeacher,
-  dbinitialize
+  
 } = require ("./database.js");
 
 const app = express();
-const bodyParser = require("body-parser");
+const bodyParser = require  ("body-parser");
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
@@ -78,7 +78,7 @@ app.post("/deleteTeacher", async function (req, res) {
   res.end(JSON.stringify(data));
 });
 
-// ============== Student Related endpoints ============== //
+// ============== Student Related endpoints ==============
 
 app.get("/listStudents", async function (req, res) {
   console.log("Request received to list students");
