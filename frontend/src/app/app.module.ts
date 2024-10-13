@@ -14,7 +14,7 @@ import { AddNewStudentComponent } from './components/add-new-student/add-new-stu
 import { EditStudentComponent } from './components/edit-student/edit-student.component';
 import { EditTeacherComponent } from './components/edit-teacher/edit-teacher.component';
 
-
+//
 @NgModule({
   declarations: [
     AppComponent,
